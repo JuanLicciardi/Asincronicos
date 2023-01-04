@@ -89,6 +89,38 @@ input, select{
   height: 25px;
 }
 
+.navbar
+{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 10px;
+}
+
+.navbar a
+{
+  text-decoration: none;
+  color:#0B5ED7;
+}
+
+.editButton
+{
+  position: relative;
+  left: 25px;
+  margin-bottom: 25px;
+  background: linear-gradient(120deg, #79ccf7 0%, #a6dcee 100%);
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 700;
+}
+
+button
+{
+  cursor: pointer;
+}
+
 @media screen and (min-width: 600px) {
   .card {
     flex: 1 1 calc(50% - 2rem);

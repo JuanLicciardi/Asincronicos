@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const genresAPIController = require('../../controllers/api/genresAPIController');
+const {list, detail, genreMovies} = require('../../controllers/api/genresAPIController');
 
 //Rutas
 //Listado de todos los generos
-router.get('/', genresAPIController.list);
+router
+.get('/', list)
 //Detalle del genero
-router.get('/:id', genresAPIController.detail);
+.get('/:id', detail)
 //Películas por genero
-router.get('/:id/movies', genresAPIController.genreMovies);
+.get('/:id/movies', genreMovies);
 
 module.exports = router;

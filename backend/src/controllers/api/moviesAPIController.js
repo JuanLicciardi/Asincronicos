@@ -7,13 +7,12 @@ const moment = require('moment');
 
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 const Movies = db.Movie;
-const Genres = db.Genre;
-const Actors = db.Actor;
+
 
 
 const moviesAPIController = {
     'list': (req, res) => {
-        db.Movie.findAll({
+        Movies.findAll({
             include: ['genre']
         })
         .then(movies => {
@@ -30,7 +29,7 @@ const moviesAPIController = {
     },
     
     'detail': (req, res) => {
-        db.Movie.findByPk(req.params.id,
+        Movies.findByPk(req.params.id,
             {
                 include : ['genre']
             })
@@ -47,7 +46,7 @@ const moviesAPIController = {
             });
     },
     'recomended': (req, res) => {
-        db.Movie.findAll({
+        Movies.findAll({
             include: ['genre'],
             where: {
                 rating: {[db.Sequelize.Op.gte] : req.params.rating}
